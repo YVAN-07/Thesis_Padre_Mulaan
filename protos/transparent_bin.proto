@@ -1,0 +1,163 @@
+#VRML_SIM R2025a utf8
+PROTO transparent_bin [
+  field SFVec3f translation 0.25 0.02 0
+  field SFRotation rotation 0 0 1 0
+  field SFString name "bin"
+]
+{
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    name IS name
+    children [
+      # Floor
+      Transform {
+        translation 0 0 0
+        rotation 4.480268613540606e-06 -0.7071067811794507 -0.7071067811794507 -3.1415853071795863
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 1 1 1
+              roughness 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.2 0.005 0.14
+            }
+          }
+        ]
+      }
+      # Wall 1
+      Transform {
+        translation 0 -0.0700002 0.02
+        rotation 1 0 0 1.5708
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 1 1 1
+              roughness 1
+              metalness 0
+              transparency 0.7
+            }
+            geometry Box {
+              size 0.2 0.04 0.005
+            }
+          }
+        ]
+      }
+      # Wall 2
+      Transform {
+        translation 0.1 0 0.02
+        rotation -0.5773509358554485 0.5773489358556708 0.5773509358554485 -2.094395307179586
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 1 1 1
+              roughness 1
+              metalness 0
+              transparency 0.7
+            }
+            geometry Box {
+              size 0.14 0.04 0.005
+            }
+          }
+        ]
+      }
+      # Wall 3
+      Transform {
+        translation -0.1 0 0.02
+        rotation -0.5773509358554485 0.5773489358556708 0.5773509358554485 -2.094395307179586
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 1 1 1
+              roughness 1
+              metalness 0
+              transparency 0.7
+            }
+            geometry Box {
+              size 0.14 0.04 0.005
+            }
+          }
+        ]
+      }
+      # Wall 4
+      Transform {
+        translation 0 0.07 0.0200004
+        rotation 1 0 0 1.5708
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 1 1 1
+              roughness 1
+              metalness 0
+              transparency 0.7
+            }
+            geometry Box {
+              size 0.2 0.04 0.005
+            }
+          }
+        ]
+      }
+    ]
+    boundingObject Group {
+      children [
+        Transform {
+          translation 0 0 0
+          rotation 4.480268613540606e-06 -0.7071067811794507 -0.7071067811794507 -3.1415853071795863
+          children [
+            Shape {
+              geometry Box {
+                size 0.2 0.005 0.14
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 -0.0700002 0.02
+          rotation 1 0 0 1.5708
+          children [
+            Shape {
+              geometry Box {
+                size 0.2 0.04 0.005
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.1 0 0.02
+          rotation -0.5773509358554485 0.5773489358556708 0.5773509358554485 -2.094395307179586
+          children [
+            Shape {
+              geometry Box {
+                size 0.14 0.04 0.005
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -0.1 0 0.02
+          rotation -0.5773509358554485 0.5773489358556708 0.5773509358554485 -2.094395307179586
+          children [
+            Shape {
+              geometry Box {
+                size 0.14 0.04 0.005
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0.07 0.0200004
+          rotation 1 0 0 1.5708
+          children [
+            Shape {
+              geometry Box {
+                size 0.2 0.04 0.005
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,205 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/so100.proto"
+EXTERNPROTO "../protos/AdjustableCube.proto"
+
+WorldInfo {
+  basicTimeStep 8
+  physicsDisableLinearThreshold 0.0001
+  physicsDisableAngularThreshold 0.001
+  contactProperties [
+    ContactProperties {
+      maxContactJoints 50
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.30844967915440563 0.21912780774296645 -0.9256574956771569 1.9781811419031514
+  position 12.602979174089496 5.792964178887754 4.251744032651377
+}
+Background {
+  skyColor [
+    0.4 0.7 1
+  ]
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction 0.1 -0.6 0.5
+  intensity 0.8
+}
+RectangleArena {
+  translation -0.02 -0.1 0
+  floorSize 4 3
+}
+Solid {
+  translation 0.25 0.02 0
+  rotation 4.480268613540606e-06 -0.7071067811794507 -0.7071067811794507 -3.1415853071795863
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.647059 0.113725 0.176471
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.2 0.005 0.14
+      }
+    }
+  ]
+  name "bin_floor"
+  boundingObject Box {
+    size 0.2 0.005 0.14
+  }
+}
+Solid {
+  translation 0.25 -0.0500002 0.02
+  rotation 1 0 0 1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.878431 0.105882 0.141176
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.2 0.04 0.005
+      }
+    }
+  ]
+  name "bin_wall1"
+  boundingObject Box {
+    size 0.2 0.04 0.005
+  }
+}
+Solid {
+  translation 0.35 0.0199998 0.02
+  rotation -0.5773509358554485 0.5773489358556708 0.5773509358554485 -2.094395307179586
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.878431 0.105882 0.141176
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.14 0.04 0.005
+      }
+    }
+  ]
+  name "bin_wall1(2)"
+  boundingObject Box {
+    size 0.14 0.04 0.005
+  }
+}
+Solid {
+  translation 0.15 0.0199998 0.02
+  rotation -0.5773509358554485 0.5773489358556708 0.5773509358554485 -2.094395307179586
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.878431 0.105882 0.141176
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.14 0.04 0.005
+      }
+    }
+  ]
+  name "bin_wall1(3)"
+  boundingObject Box {
+    size 0.14 0.04 0.005
+  }
+}
+Solid {
+  translation 0.25 0.09 0.0200004
+  rotation 1 0 0 1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.878431 0.105882 0.141176
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.2 0.04 0.005
+      }
+    }
+  ]
+  name "bin_wall1(1)"
+  boundingObject Box {
+    size 0.2 0.04 0.005
+  }
+}
+AdjustableCube {
+  size 0.075 0.025 0.02
+  translation 0.3927728051287876 0.25155690658208424 0.009970569999999998
+  rotation -3.3254741620442266e-17 -3.954116572576585e-17 1 0.4471610686549813
+  mass 0.3
+}
+AdjustableCube {
+  size 0.035 0.035 0.035
+  translation 0.39816000001110624 0.1397840000005854 0.017470569999999994
+  name "boASDASDASDAFUQ?DASx(1)"
+  rotation 1.283051573409869e-15 3.3361762332336447e-16 1 0.0526705987542716
+  mass 0.3
+}
+AdjustableCube {
+  size 0.035 0.035 0.035
+  translation 0.750304 0.10828400000000009 0.017401900000000005
+  name "cam_dummy"
+  rotation -1.3292477308823907e-15 3.217959376936781e-16 1 0.052675307179585254
+}
+so100 {
+  hidden position_0_0 6.695101906571151e-08
+  hidden rotation_1 0.8999706714266505 0.30826439040239817 0.30826264156024724 1.675988565931954
+  hidden position_1_0 -9.708139753062145e-08
+  hidden rotation_2 -1 0 0 1.8000002736161387
+  hidden position_2_0 1.9464101524719508e-06
+  hidden rotation_3 1 0 0 1.5707952740127917
+  hidden position_3_0 4.831472471061706e-07
+  hidden rotation_4 -0.9999999999999999 0 0 0.9999986855285703
+  hidden position_4_0 3.148294405684009e-07
+  hidden rotation_5 0 1 0 1.5707903501642029
+  hidden position_5_0 -2.2501981220723567e-08
+  hidden rotation_7 -3.0768526392530265e-08 0.9999999999999996 -2.0532484507762814e-13 3.14158
+  translation 0.224558 0.232906 -0.01195
+  rotation 0.08122541171496887 0.09283454045733144 0.992362927859465 0.8277031646184208
+}
+Robot {
+  translation 0.648177 0.279505 0.255138
+  rotation 0.9659258492001978 1.3796297846129714e-06 0.2588189595933291 3.14159
+  children [
+    Pose {
+      translation 0.125114 0.1 5.30722e-08
+      rotation 0 1 0 3.14159
+      children [
+        Camera {
+          name "front_camera"
+          fieldOfView 1
+          width 640
+          height 480
+          far 3
+        }
+      ]
+    }
+    Pose {
+      translation 8.4581 1.84457 7.42334
+      rotation 0.07847641019039951 0.8363361086007763 -0.5425710704544966 2.40551
+      children [
+        Camera {
+          translation 12 0 0
+          rotation 0 0.5547001962252291 0.8320502943378437 2.4336293856408275
+          name "left_camera"
+          fieldOfView 1
+          width 640
+          height 480
+          far 3
+        }
+      ]
+    }
+  ]
+  name "camera_rig"
+  controller "camera_rig_controller"
+}

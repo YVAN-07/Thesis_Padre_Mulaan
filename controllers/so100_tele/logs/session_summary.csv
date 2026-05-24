@@ -1,0 +1,9 @@
+session_metric,value,unit,description
+total_episodes,135,count,Total number of episodes recorded
+total_frames,123,frames,Total simulation frames executed
+total_simulation_time,3.936,seconds,Total simulation time (frame_count * timestep)
+timestep,32,milliseconds,Simulation timestep duration
+frame_rate,31.25,Hz,Target frame rate (1000ms / 32ms)
+timestamp,2026-05-19T09:38:17.716411,ISO 8601,Session end time
+avg_frames_per_episode,0.9111111111111111,frames,Average frames per recorded episode
+episode_file_range,csv_001.csv to csv_135.csv,files,Range of episode CSV files created

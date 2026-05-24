@@ -1,0 +1,42 @@
+#VRML_SIM R2025a utf8
+PROTO AdjustableCube [
+  field SFVec3f size        0.03 0.03 0.03
+  field SFVec3f translation 0.000378114 -0.393464 0.21746076607434995 #0 0 .5
+  field SFString    name            "box"
+  field SFRotation rotation 0 1 0 0
+  field SFColor baseColor   0.333 0.666 0.5
+  field SFFloat roughness   0.0     # 0 = smooth, 1 = rough
+  field SFFloat metalness   0.0     # 0 = plastic, 1 = metal
+
+  field SFFloat mass        1.0
+]
+{
+  Solid {
+    name IS name
+    
+    translation IS translation
+    rotation IS rotation
+
+    children [
+      Shape {
+        appearance PBRAppearance {
+          baseColor IS baseColor
+          roughness IS roughness
+          metalness IS metalness
+        }
+        geometry Box {
+          size IS size
+        }
+      }
+    ]
+
+    boundingObject Box {
+      size IS size
+    }
+
+    physics Physics {
+      mass IS mass
+      density -1 
+    }
+  }
+}

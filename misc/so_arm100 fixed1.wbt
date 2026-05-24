@@ -1,0 +1,212 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/so100.proto"
+
+WorldInfo {
+  basicTimeStep 8
+  physicsDisableLinearThreshold 0.0001
+  physicsDisableAngularThreshold 0.001
+  contactProperties [
+    ContactProperties {
+      maxContactJoints 50
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.3385059033858731 0.18491714725881478 0.9226155223182492 2.207913890048262
+  position 0.8091375059929027 -0.38958613172535594 0.7120375590033423
+}
+Background {
+  skyColor [
+    0.4 0.7 1
+  ]
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction 0.1 -0.6 0.5
+  intensity 1.2
+}
+DirectionalLight {
+  direction -0.3 -0.8 -0.4
+  intensity 0.6
+}
+RectangleArena {
+  floorSize 4 3
+  floorAppearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+  wallHeight 2.5
+  wallAppearance PBRAppearance {
+    baseColor 0.9 0.9 0.9
+    roughness 1
+    metalness 0
+  }
+}
+Solid {
+  translation 0.25 0.02 0
+  rotation 4.480268613540606e-06 -0.7071067811794507 -0.7071067811794507 -3.1415853071795863
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.1 0.1
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.2 0.005 0.14
+      }
+    }
+  ]
+  name "bin_floor"
+  boundingObject Box {
+    size 0.2 0.005 0.14
+  }
+}
+Solid {
+  translation 0.25 -0.0500002 0.02
+  rotation 1 0 0 1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.9 0.15 0.15
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.2 0.04 0.005
+      }
+    }
+  ]
+  name "bin_wall1"
+  boundingObject Box {
+    size 0.2 0.04 0.005
+  }
+}
+Solid {
+  translation 0.35 0.0199998 0.02
+  rotation -0.5773509358554485 0.5773489358556708 0.5773509358554485 -2.094395307179586
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.9 0.15 0.15
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.14 0.04 0.005
+      }
+    }
+  ]
+  name "bin_wall2"
+  boundingObject Box {
+    size 0.14 0.04 0.005
+  }
+}
+Solid {
+  translation 0.15 0.0199998 0.02
+  rotation -0.5773509358554485 0.5773489358556708 0.5773509358554485 -2.094395307179586
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.9 0.15 0.15
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.14 0.04 0.005
+      }
+    }
+  ]
+  name "bin_wall3"
+  boundingObject Box {
+    size 0.14 0.04 0.005
+  }
+}
+Solid {
+  translation 0.25 0.09 0.0200004
+  rotation 1 0 0 1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.9 0.15 0.15
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.2 0.04 0.005
+      }
+    }
+  ]
+  name "bin_wall4"
+  boundingObject Box {
+    size 0.2 0.04 0.005
+  }
+}
+so100 {
+  hidden position_1_0 -0.3
+  hidden position_2_0 0.5
+  translation 0.227376 0.185786 0.00927061
+  rotation 0 0 1 1.5708
+  supervisor TRUE
+}
+DEF camera_rig Robot {
+  translation 0.3 0.15 0.6
+  children [
+    Pose {
+      translation 0.43644 0.0300003 -0.32278
+      rotation -0.25881895959356266 3.1452695089651253e-07 0.9659258492010694 3.14159
+      children [
+        Camera {
+          name "up_camera"
+          fieldOfView 1.2
+          width 640
+          height 480
+          far 3
+        }
+      ]
+    }
+    Pose {
+      translation 0.309265 -0.329263 -0.5
+      rotation 0 0 1 2.3562
+      children [
+        Camera {
+          name "side_camera"
+          fieldOfView 1.2
+          width 640
+          height 480
+          far 3
+        }
+      ]
+    }
+  ]
+  name "camera_rig"
+  controller "camera_rig_controller"
+}
+Solid {
+  translation 0.4799458761482116 0.19004536794635496 0.014990189999999997
+  rotation -1.880168532321685e-14 5.063089508166809e-15 1 0.00043930625117213456
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.14902 0.635294 0.411765
+        roughness 0.5
+        metalness 0
+      }
+      geometry Box {
+        size 0.05 0.03 0.03
+      }
+    }
+  ]
+  name "cube1"
+  boundingObject Box {
+    size 0.05 0.03 0.03
+  }
+  physics Physics {
+    density -1
+    mass 0.1
+  }
+  linearVelocity -4.398140795394071e-18 -8.452712450105525e-18 5.766646785322362e-17
+  angularVelocity 7.426919716415673e-16 -1.0160485740511988e-16 -2.3970811768083142e-17
+}

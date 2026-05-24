@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<robot name="C:/Users/Timot/AppData/Local/Programs/Python/Python39/updated-thesis/protos/so100.urdf" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="base_link">
+    <visual>
+      <origin xyz="-0.0447 0 0.13" rpy="0 0 -1.570796"/>
+      <geometry>
+        <cylinder radius="0.219" length="0.24"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0447 0 0.13" rpy="0 0 -1.570796"/>
+      <geometry>
+        <cylinder radius="0.219" length="0.24"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="ds15">
+  </link>
+  <joint name="base_link_ds15_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ds15"/>
+    <origin xyz="0.164 -0.027 0.209" rpy="1.570796 0 -0.174796"/>
+  </joint>
+  <link name="ds14">
+  </link>
+  <joint name="base_link_ds14_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ds14"/>
+    <origin xyz="0.147 -0.077 0.209" rpy="1.570796 0 -0.523795"/>
+  </joint>
+  <link name="ds13">
+  </link>
+  <joint name="base_link_ds13_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ds13"/>
+    <origin xyz="0.116 -0.118 0.209" rpy="1.570796 0 -0.872795"/>
+  </joint>
+  <link name="ds12">
+  </link>
+  <joint name="base_link_ds12_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ds12"/>
+    <origin xyz="0.071 -0.136 0.209" rpy="1.570796 0 -1.570796"/>
+  </joint>
+  <link name="ds11">
+  </link>
+  <joint name="base_link_ds11_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ds11"/>
+    <origin xyz="-0.16 -0.136 0.209" rpy="1.570796 0 -1.570796"/>
+  </joint>
+  <link name="ds10">
+  </link>
+  <joint name="base_link_ds10_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ds10"/>
+    <origin xyz="-0.205 -0.118 0.209" rpy="1.570796 -0.000001 -2.268797"/>
+  </joint>
+  <link name="ds9">
+  </link>
+  <joint name="base_link_ds9_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ds9"/>
+    <origin xyz="-0.236 -0.077 0.209" rpy="1.570796 0 -2.617796"/>
+  </joint>
+  <link name="ds8">
+  </link>
+  <joint name="base_link_ds8_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ds8"/>
+    <origin xyz="-0.253 -0.027 0.209" rpy="1.570796 0 -2.966797"/>
+  </joint>
+  <link name="ds7">
+  </link>
+  <joint name="base_link_ds7_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ds7"/>
+    <origin xyz="-0.253 0.027 0.209" rpy="1.570796 0 2.967389"/>
+  </joint>
+  <link name="ds6">
+  </link>
+  <joint name="base_link_ds6_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ds6"/>
+    <origin xyz="-0.236 0.077 0.209" rpy="1.570796 0 2.618389"/>
+  </joint>
+  <link name="ds5">
+  </link>
+  <joint name="base_link_ds5_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ds5"/>
+    <origin xyz="-0.205 0.118 0.209" rpy="1.570796 0 2.269389"/>
+  </joint>
+  <link name="ds4">
+  </link>
+  <joint name="base_link_ds4_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ds4"/>
+    <origin xyz="-0.16 0.136 0.209" rpy="1.570796 0 1.57239"/>
+  </joint>
+  <link name="ds3">
+  </link>
+  <joint name="base_link_ds3_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ds3"/>
+    <origin xyz="0.071 0.136 0.209" rpy="1.570796 0 1.569205"/>
+  </joint>
+  <link name="ds2">
+  </link>
+  <joint name="base_link_ds2_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ds2"/>
+    <origin xyz="0.116 0.118 0.209" rpy="1.570797 0 0.872204"/>
+  </joint>
+  <link name="ds1">
+  </link>
+  <joint name="base_link_ds1_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ds1"/>
+    <origin xyz="0.147 0.077 0.209" rpy="1.570796 0 0.523204"/>
+  </joint>
+  <link name="ds0">
+  </link>
+  <joint name="base_link_ds0_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ds0"/>
+    <origin xyz="0.164 0.027 0.209" rpy="0 0 0.174203"/>
+  </joint>
+  <joint name="right wheel motor" type="continuous">
+    <parent link="base_link"/>
+    <child link="right wheel"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="10" velocity="10"/>
+    <origin xyz="0 0 0.0825" rpy="2.493482 0 -1.570796"/>
+  </joint>
+  <link name="right wheel">
+    <visual>
+      <origin xyz="0.1603 0 0" rpy="-1.570796 0 1.57"/>
+      <geometry>
+        <cylinder radius="0.0825" length="0.037"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.1603 0 0" rpy="-1.570796 0 1.57"/>
+      <geometry>
+        <cylinder radius="0.0825" length="0.037"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left wheel motor" type="continuous">
+    <parent link="base_link"/>
+    <child link="left wheel"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="10" velocity="10"/>
+    <origin xyz="0.1603 0 0.0825" rpy="0.528445 0 -1.570796"/>
+  </joint>
+  <link name="left wheel">
+    <visual>
+      <origin xyz="-0.1603 0 0" rpy="-1.570796 0 1.57"/>
+      <geometry>
+        <cylinder radius="0.0825" length="0.037"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.1603 0 0" rpy="-1.570796 0 1.57"/>
+      <geometry>
+        <cylinder radius="0.0825" length="0.037"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

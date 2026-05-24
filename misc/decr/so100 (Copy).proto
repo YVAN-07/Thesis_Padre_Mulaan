@@ -1,0 +1,369 @@
+#VRML_SIM R2025a utf8
+# license: Apache License 2.0
+# SO-ARM100 Proto - Optimized for Webots
+# Visual meshes: Original detailed geometry
+# Collision meshes: Simplified geometry for performance
+
+PROTO so100 [
+  field  SFVec3f     translation     0 0 .5
+  field  SFRotation  rotation        0 0 1 0
+  field  SFString    name            "so100"
+  field  SFString    controller      "so_arm100_controller"
+  field  MFString    controllerArgs  []
+  field  SFString    customData      ""
+  field  SFBool      supervisor      FALSE
+  field  SFBool      synchronization TRUE
+  field  SFBool      selfCollision   TRUE
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    selfCollision IS selfCollision
+    children [
+      # Base visuals (original detailed meshes)
+      Shape {
+        appearance DEF three_d_printed PBRAppearance {
+          baseColor 1.000000 0.500000 0.000000
+          roughness 0.800000
+          metalness 1
+        }
+        geometry DEF Base Mesh {
+          url "assets/Base.stl"
+        }
+      }
+      Shape {
+        appearance DEF sts3215 PBRAppearance {
+          baseColor 0.300000 0.300000 0.500000
+          roughness 0.800000
+          metalness 1
+        }
+        geometry DEF Base_Motor Mesh {
+          url "assets/Base_Motor.stl"
+        }
+      }
+      
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000000 0.000006 1.000000
+          anchor 0.000000 -0.045200 0.016500
+        }
+        device [
+          RotationalMotor {
+            name "1"
+            maxVelocity 1.0
+            maxTorque 25.0
+          }
+          PositionSensor {
+            name "sensor_1"
+          }
+        ]
+        endPoint Solid {
+          translation 0.000000 -0.045200 0.016500
+          rotation 1.000000 0.000000 0.000000 1.570790
+          children [
+            # Shoulder visuals (original detailed)
+            Shape {
+              appearance USE three_d_printed
+              geometry DEF Rotation_Pitch Mesh {
+                url "assets/Rotation_Pitch.stl"
+              }
+            }
+            Shape {
+              appearance USE sts3215
+              geometry DEF Rotation_Pitch_Motor Mesh {
+                url "assets/Rotation_Pitch_Motor.stl"
+              }
+            }
+            
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                anchor 0.000000 0.102500 0.030600
+              }
+              device [
+                RotationalMotor {
+                  name "2"
+                  maxVelocity 1.0
+                  maxTorque 25.0
+                }
+                PositionSensor {
+                  name "sensor_2"
+                }
+              ]
+              endPoint Solid {
+                translation 0.000000 0.102500 0.030600
+                rotation -1.000000 0.000000 0.000000 1.800000
+                children [
+                  # Upper arm visuals (original detailed)
+                  Shape {
+                    appearance USE three_d_printed
+                    geometry DEF Upper_Arm Mesh {
+                      url "assets/Upper_Arm.stl"
+                    }
+                  }
+                  Shape {
+                    appearance USE sts3215
+                    geometry DEF Upper_Arm_Motor Mesh {
+                      url "assets/Upper_Arm_Motor.stl"
+                    }
+                  }
+                  
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      anchor 0.000000 0.112570 0.028000
+                    }
+                    device [
+                      RotationalMotor {
+                        name "3"
+                        maxVelocity 1.0
+                        maxTorque 25.0
+                      }
+                      PositionSensor {
+                        name "sensor_3"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation 0.000000 0.112570 0.028000
+                      rotation 1.000000 0.000000 0.000000 1.570790
+                      children [
+                        # Lower arm visuals (original detailed)
+                        Shape {
+                          appearance USE three_d_printed
+                          geometry DEF Lower_Arm Mesh {
+                            url "assets/Lower_Arm.stl"
+                          }
+                        }
+                        Shape {
+                          appearance USE sts3215
+                          geometry DEF Lower_Arm_Motor Mesh {
+                            url "assets/Lower_Arm_Motor.stl"
+                          }
+                        }
+                        
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                            anchor 0.000000 0.005200 0.134900
+                          }
+                          device [
+                            RotationalMotor {
+                              name "4"
+                              maxVelocity 1.0
+                              minPosition -2.5
+                              maxPosition 1.2
+                              maxTorque 25.0
+                            }
+                            PositionSensor {
+                              name "sensor_4"
+                            }
+                          ]
+                          endPoint Solid {
+                            translation 0.000000 0.005200 0.134900
+                            rotation -1.000000 0.000000 0.000000 1.000000
+                            children [
+                              # Wrist visuals (original detailed)
+                              Shape {
+                                appearance USE three_d_printed
+                                geometry DEF Wrist_Pitch_Roll Mesh {
+                                  url "assets/Wrist_Pitch_Roll.stl"
+                                }
+                              }
+                              Shape {
+                                appearance USE sts3215
+                                geometry DEF Wrist_Pitch_Roll_Motor Mesh {
+                                  url "assets/Wrist_Pitch_Roll_Motor.stl"
+                                }
+                              }
+                              
+                              HingeJoint {
+                                jointParameters HingeJointParameters {
+                                  axis 0.000000 1.000000 0.000000
+                                  anchor 0.000000 -0.060100 0.000000
+                                }
+                                device [
+                                  RotationalMotor {
+                                    name "5"
+                                    maxVelocity 1.0
+                                    minPosition -3.14158
+                                    maxPosition 3.14158
+                                    maxTorque 25.0
+                                  }
+                                  PositionSensor {
+                                    name "sensor_5"
+                                  }
+                                ]
+                                endPoint Solid {
+                                  translation 0.000000 -0.060100 0.000000
+                                  rotation 0.000000 1.000000 0.000000 1.570790
+                                  children [
+                                    # Fixed jaw visuals (original detailed)
+                                    Shape {
+                                      appearance USE three_d_printed
+                                      geometry DEF Fixed_Jaw Mesh {
+                                        url "assets/Fixed_Jaw.stl"
+                                      }
+                                    }
+                                    Shape {
+                                      appearance USE sts3215
+                                      geometry DEF Fixed_Jaw_Motor Mesh {
+                                        url "assets/Fixed_Jaw_Motor.stl"
+                                      }
+                                    }
+                                    
+                                    Camera {
+                                      name "gripper_camera"
+                                      width 224
+                                      height 224
+                                      fieldOfView 1.0472
+                                      near 0.01
+                                      far 1.0
+                                    }
+                                    
+                                    HingeJoint {
+                                      jointParameters HingeJointParameters {
+                                        axis 0.000013 0.000000 -1.000000
+                                        anchor -0.020200 -0.024400 0.000000
+                                      }
+                                      device [
+                                        RotationalMotor {
+                                          name "6"
+                                          maxVelocity 1.0
+                                          minPosition -0.2
+                                          maxPosition 2.0
+                                          maxTorque 25.0
+                                        }
+                                        PositionSensor {
+                                          name "sensor_6"
+                                        }
+                                      ]
+                                      endPoint Solid {
+                                        translation -0.020200 -0.024400 0.000000
+                                        rotation 0.000000 1.000000 0.000000 3.141580
+                                        children [
+                                          # Moving jaw visual (original detailed)
+                                          Shape {
+                                            appearance USE three_d_printed
+                                            geometry DEF Moving_Jaw Mesh {
+                                              url "assets/Moving_Jaw.stl"
+                                            }
+                                          }
+                                        ]
+                                        name "jaw"
+                                        boundingObject Mesh {
+                                          url "assets/simplified/Moving_Jaw.stl"
+                                        }
+                                        physics Physics {
+                                          density -1
+                                          mass 0.020244
+                                          centerOfMass [ -0.001617 -0.030347 0.000450 ]
+                                          inertiaMatrix [
+                                            1.112650e-05 8.996510e-06 2.995480e-06
+                                            0.000000e+00 0.000000e+00 0.000000e+00
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  ]
+                                  name "gripper"
+                                  boundingObject Mesh {
+                                    url "assets/simplified/Fixed_Jaw.stl"
+                                  }
+                                  physics Physics {
+                                    density -1
+                                    mass 0.092986
+                                    centerOfMass [ 0.005524 -0.028017 0.000484 ]
+                                    inertiaMatrix [
+                                      5.031360e-05 4.640980e-05 2.729610e-05
+                                      0.000000e+00 0.000000e+00 0.000000e+00
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                            name "wrist"
+                            boundingObject Mesh {
+                              url "assets/simplified/Wrist_Pitch_Roll.stl"
+                            }
+                            physics Physics {
+                              density -1
+                              mass 0.066132
+                              centerOfMass [ -0.008527 -0.035228 -0.000023 ]
+                              inertiaMatrix [
+                                3.454030e-05 2.390410e-05 1.947040e-05
+                                0.000000e+00 0.000000e+00 0.000000e+00
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                      name "lower_arm"
+                      boundingObject Mesh {
+                        url "assets/simplified/Lower_Arm.stl"
+                      }
+                      physics Physics {
+                        density -1
+                        mass 0.147968
+                        centerOfMass [ -0.003396 0.001378 0.076801 ]
+                        inertiaMatrix [
+                          1.388030e-04 1.077480e-04 4.842420e-05
+                          0.000000e+00 0.000000e+00 0.000000e+00
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "upper_arm"
+                boundingObject Mesh {
+                  url "assets/simplified/Upper_Arm.stl"
+                }
+                physics Physics {
+                  density -1
+                  mass 0.162409
+                  centerOfMass [ -0.000017 0.070180 0.003105 ]
+                  inertiaMatrix [
+                    2.133120e-04 1.671640e-04 7.015220e-05
+                    0.000000e+00 0.000000e+00 0.000000e+00
+                  ]
+                }
+              }
+            }
+          ]
+          name "shoulder"
+          boundingObject Mesh {
+            url "assets/simplified/Rotation_Pitch.stl"
+          }
+          physics Physics {
+            density -1
+            mass 0.119226
+            centerOfMass [ -0.000091 0.059097 0.031089 ]
+            inertiaMatrix [
+              5.942780e-05 5.899750e-05 3.137120e-05
+              0.000000e+00 0.000000e+00 0.000000e+00
+            ]
+          }
+        }
+      }
+    ]
+    name IS name
+    boundingObject Mesh {
+      url "assets/simplified/Base.stl"
+    }
+    physics Physics {
+      density -1
+      mass 1.000000
+      centerOfMass [ 0.000000 0.000000 0.000000 ]
+      inertiaMatrix [
+        2.000000e-02
+        2.000000e-02
+        2.000000e-02
+        0.000000e+00 
+        0.000000e+00 
+        0.000000e+00
+      ]
+    }
+  }
+}
